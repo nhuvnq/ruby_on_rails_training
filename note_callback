@@ -1,0 +1,15 @@
+===== Common callback ====
+before_save 
+after_update
+==========================
+- With callbacks it possible to write code that will run whenever an Active Record obj is created, saved, updated, deleted, 
+- after_save runs both on create and update, but always AFTER the more specific callbacks after_create and after_update, no matter the order
+- after_initialize : using new or when record loaded from database
+	after_find : when record loaded from database
+	----- after_find call first -----
+-after_touch :can you with belongs_to
+
+=====Relational callback====
+after_destroy
+
+=====Callback classes =====

@@ -1,11 +1,21 @@
 class User < ApplicationRecord
 	has_many :albums
-	has_many :photos
+	has_many :photos, dependent: :destroy
+
+	## need to confirm again, may result in some unwanted record
 	before_save :default_values
 	before_create :default_values
 	after_save :album
 
-	validates :password, presence: true, :message => "need to have some words :'<"
+	after_find do |user|
+		puts "Found!!"
+	end
+	after_touch :log_when_user_or_photo_touched
+
+	def log_when_user_or_photo_touched
+		puts "User : %{self.id}"
+	end 
+	validates :password, presence: true# :message => "need to have some words :'<"
 
 	# set defaut state 
 	def default_values
