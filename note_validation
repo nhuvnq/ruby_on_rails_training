@@ -6,3 +6,25 @@ or
 errors.add(:name, "cannot contain special character")
 
 To add error message to whole object instead of specific attributes, use errors[:base] (an array). It means no matter the values of its attributes, this object is absolutely invalid
+
+** validate association model**
+use validate_associated
+
+**numericality**
+is_presence
+greater_than(_or_equals_to)
+odd
+even
+**absence**
+beacuse the false.present? = false so if you want to validate the absence of boolean you should use validates :field_name, exclusion: {in: [true,false]}
+
+***validates_with****
+-validates_with takes classes, or list of classes to use for validation.
+-Should define custom error message
+-take :if,:unless, :on options
+
+////////////////////////////////////////
+**:on**
+the options let you specify when the validation should happen
+built-in validators run on save(create and update)
+on: create - on:update
