@@ -1,0 +1,8 @@
+**Custom errors**
+errors.messages[:name]<< "cannot contain special character"
+=> u.errors[:name]
+=> u.errors.full_messages
+or
+errors.add(:name, "cannot contain special character")
+
+To add error message to whole object instead of specific attributes, use errors[:base] (an array). It means no matter the values of its attributes, this object is absolutely invalid
