@@ -1,0 +1,17 @@
+-rails db:migrate will call db:schema:dump to update db/schema.rb to match structure of yout database
+
+-rails db:redo task is a shortcut fordoing a rollback and then migrating back up again
+
+-rails db:setup task will create the database, load the schema and initialize with the seed data
+
+-rails db:reset == rails db:drop + rails db:setup
+
+-if you make mistake to a migration, you need to rollback , fix and db:migrate:redo. In general, it's not reccommend to do this way when work in team
+
+-Authorative souce: db/schema -> represent the current state of database
+
+-Active Record claims that intelligence belongsin your MODEL, not in the database
+
+5.times do |i|
+	Product.create(name: "Product ##{i}", description : "A product.")
+	end
