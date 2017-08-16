@@ -10,7 +10,7 @@
 
 -Authorative souce: db/schema -> represent the current state of database
 
--Active Record claims that intelligence belongsin your MODEL, not in the database
+-Active Record claims that intelligence belong your MODEL, not in the database
 
 5.times do |i|
 	Product.create(name: "Product ##{i}", description : "A product.")
