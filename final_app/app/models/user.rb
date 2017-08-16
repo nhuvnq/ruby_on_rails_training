@@ -5,7 +5,10 @@ class User < ApplicationRecord
 	before_create :default_values
 	after_save :album
 
-	validates :password, presence: true, :message => "need to have some words :'<"
+	validates :name, presence: true
+	validates :password, confirmation: true#, :message => "need to have some words :'<"
+	validates :password_confirmation, presence: true
+	validates :email, uniqueness: true
 
 	# set defaut state 
 	def default_values
