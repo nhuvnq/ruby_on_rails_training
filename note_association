@@ -1,0 +1,16 @@
+In Rails, associaton is a connection between two Active Record models. Association makes common associations simplier and easier in your code
+
+========= has_many through =============
+if we have two tables are users and groups, and we have two instances: @user and @group. We call @user << @group which is add group_id in @user and then the join table of the (user and group) is automatically created (if not) and automatically create a record (which is really awesome :D :D 
+)
+
+-------------------------------------------
+if we have three tables that have relationships such as: user has many albums, albums has many photos and the user may want to get the collection of photos, we can use has_many :through to define such situations
+We can call @user.photos .
+
+=========== tips ========================
+- belongs_to vs has_one: the difference is the place you set the key, belongs_to is where you place the key
+- t.integer :supplier_id === t.references :supplier
+- has_and_belongs_to : create a direct association
+	has_many :through : through a join model
+	rule of thump: use has_many :through if you want to work with independent enities, and need validations, callbacks and extra attributes on the join model
