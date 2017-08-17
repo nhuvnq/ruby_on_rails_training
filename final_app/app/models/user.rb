@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 	has_many :albums
-	has_many :photos
+	has_many :photos, through: :albums
+	
 	before_save :default_values
 	before_create :default_values
 	after_save :album

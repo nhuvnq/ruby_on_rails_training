@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20170816154811) do
     t.datetime "updated_at", null: false
     t.string "password"
     t.string "email"
-    t.integer "like", default: 0
   end
 
 end
